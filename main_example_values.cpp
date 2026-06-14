@@ -12,6 +12,14 @@ int main() {
         FieldZone zone1("Z-01", 20.0, 45.0);  
         FieldZone zone2("Z-02", 75.0, 15.0);  
 
+        // operator<< and operator== demonstration
+        std::cout << zone1 << "\n";
+        std::cout << zone2 << "\n";
+        if (zone1 == zone2)
+            std::cout << "Same zone\n";
+        else
+            std::cout << "Different zones!\n\n";
+
         // 2. Drone & Scanner
         Drone drone("D-01", "4K");
         drone.scanZone(zone1);
@@ -24,9 +32,8 @@ int main() {
         manager.addZone(zone2);
 
         // 4. Recommendations
-        // 4. Recommendations
-		manager.addRecommendation(std::unique_ptr<IrrigationRec>(new IrrigationRec("Z-01", 3, 50.0)));
-		manager.addRecommendation(std::unique_ptr<FertilizerRec>(new FertilizerRec("Z-02", 2, 12.5)));
+        manager.addRecommendation(std::unique_ptr<IrrigationRec>(new IrrigationRec("Z-01", 3, 50.0)));
+        manager.addRecommendation(std::unique_ptr<FertilizerRec>(new FertilizerRec("Z-02", 2, 12.5)));
 
         // 5. Execution
         std::cout << "\n--- Recommendations ---\n";
@@ -37,6 +44,5 @@ int main() {
     } catch (const std::exception& e) {
         std::cout << "Error: " << e.what() << "\n";
     }
-
     return 0;
 }
