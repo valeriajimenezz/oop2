@@ -11,7 +11,7 @@ helping farmers optimize their fields efficiently.
 
 ## How to Build
 ```bash
-g++ -std=c++11 -Wall main_example_values.cpp -o drone
+g++ -std=c++14 -Wall main_example_values.cpp -o drone
 ```
 
 ## How to Run
@@ -21,6 +21,17 @@ drone.exe       # Windows
 ```
 
 ## Expected Output
+Zone Z-01 [Moisture:20 Nutrients:45]
+Zone Z-02 [Moisture:75 Nutrients:15]
+Different zones!
+[SCAN] Zone Z-01 | Moisture: 20 | Nutrients: 45
+[SCAN] Zone Z-02 | Moisture: 75 | Nutrients: 15
+--- Recommendations ---
+Irrigating zone Z-01 with 50.0 liters
+Applying 12.5 kg of fertilizer to zone Z-02
+--- Details ---
+Zone: Z-01  Priority: 3/5
+Zone: Z-02  Priority: 2/5
 
 ## Class Overview
 | Class | Concept Demonstrated |
