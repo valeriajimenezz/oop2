@@ -1,4 +1,23 @@
-# oop2
-# Description : 
-This demo project models a protected natural areas management system, inspired by how organizations like CONANP track and manage Mexico's natural reserves and national parks.
-The system handles two types of natural areas: Reserves and National Parks. Both share common attributes like name, ID, and conservation ratings, but each has its own unique characteristics reserves are classified by ecosystem type, while national parks track annual visitor counts which directly affect their conservation score.
+# 🚁 Drone Field Analysis System
+**TC1030 — Object-Oriented Programming**  
+**Tecnológico de Monterrey, Campus Querétaro**  
+**Author:** Valeria Jiménez
+
+## Problem Description
+This program simulates a drone equipped with a camera scanner that analyzes
+agricultural field zones. It calculates which zones need irrigation or 
+fertilization and assigns a priority level (1–5) to each recommendation,
+helping farmers optimize their fields efficiently.
+
+## How to Build
+```bash
+g++ -std=c++11 -Wall main_example_values.cpp -o drone
+```
+
+## How to Run
+```bash
+drone.exe       # Windows
+./drone         # Linux/Mac
+```
+
+## Expected Output
