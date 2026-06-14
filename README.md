@@ -21,3 +21,29 @@ drone.exe       # Windows
 ```
 
 ## Expected Output
+
+## Class Overview
+| Class | Concept Demonstrated |
+|---|---|
+| `FieldZone` | Encapsulation, invariants (0–100 range) |
+| `Recommendation` | Abstract base class, virtual destructor |
+| `IrrigationRec` | Inheritance, runtime polymorphism |
+| `FertilizerRec` | Inheritance, runtime polymorphism |
+| `CameraScanner` | Encapsulation, composition part |
+| `Drone` | Composition (owns CameraScanner) |
+| `FieldManager` | Smart pointers, aggregation |
+
+## OOP Concepts Checklist
+- **Encapsulation:** Private fields with validated setters in `FieldZone` and `Recommendation`
+- **Inheritance:** `IrrigationRec` and `FertilizerRec` extend abstract `Recommendation`
+- **Polymorphism:** `FieldManager` holds `vector<unique_ptr<Recommendation>>` and calls `apply()` virtually
+- **Composition:** `Drone` owns a `CameraScanner` by value
+- **Exception Handling:** Invalid values throw `std::invalid_argument`
+- **Smart Pointers:** `unique_ptr` for all heap-allocated recommendations
+- **RAII:** No raw `new/delete` in ownership positions
+
+## Ownership — Rule of Zero
+All classes use the **Rule of Zero**: every resource is owned through RAII 
+wrappers (`std::string`, `std::vector`, `std::unique_ptr`). No manual 
+destructor, copy constructor, or assignment operator was needed because 
+the standard library handles memory automatically and correctly.
