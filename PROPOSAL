@@ -1,0 +1,33 @@
+# Project Proposal — Drone Field Analysis System
+**TC1030 — Object-Oriented Programming**
+**Author:** Valeria Jiménez | A01714375
+
+## Problem Statement
+Modern agriculture faces the challenge of efficiently managing large field zones
+with limited resources. This program simulates a drone equipped with a camera 
+scanner that analyzes agricultural zones and generates prioritized recommendations
+for irrigation and fertilization, helping farmers optimize their fields.
+This is a personal project that I started a few months ago. I would like to 
+help Mexican agriculture with an intelligent drone built at a lower cost, 
+designed and manufactured in Mexico using recycled materials.
+
+## Domain
+Agricultural technology / precision farming simulation.
+
+## Why OOP?
+The problem naturally maps to objects: a Drone has a CameraScanner, field zones
+have measurable properties, and recommendations share behavior but differ in 
+implementation. Inheritance and polymorphism allow the system to handle multiple
+recommendation types uniformly, while composition models the real-world 
+relationship between a drone and its camera.
+
+## Class List
+| Class | Role | OOP Concept |
+|---|---|---|
+| `FieldZone` | Represents a field zone with moisture and nutrient levels | Encapsulation, invariants, exception handling |
+| `Recommendation` | Abstract base for all recommendations | Abstract class, virtual destructor, pure virtual methods |
+| `IrrigationRec` | Irrigation recommendation | Inheritance, runtime polymorphism, operator overloading |
+| `FertilizerRec` | Fertilization recommendation | Inheritance, runtime polymorphism |
+| `CameraScanner` | Sensor that scans a field zone | Encapsulation, composition part |
+| `Drone` | Owns a camera, scans zones | Composition, RAII, std::vector |
+| `FieldManager` | Coordinates drones and recommendations | Smart pointers, aggregation, polymorphic dispatch |
